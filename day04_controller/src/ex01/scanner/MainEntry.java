@@ -11,6 +11,9 @@ public class MainEntry extends Object{ // object 모두 상속(자동)
 		System.out.print("값을 입력해주세요 -> ");
 		int input = sc.nextInt();
 		
+		double y = sc.nextDouble();
+		char ch = sc.next().charAt(0); // .charAt(인덱스번호) : 위치값 찾기
+		
 		System.out.println(x + ", " + input);
 	}
 
