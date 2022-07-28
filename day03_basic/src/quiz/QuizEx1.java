@@ -1,4 +1,4 @@
-package quiz.Operator;
+package quiz;
 
 public class QuizEx1 {
 
