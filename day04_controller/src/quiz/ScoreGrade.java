@@ -19,11 +19,12 @@ public class ScoreGrade {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("이름을 입력해주세요 : ");
+		String name = sc.nextLine();
 		System.out.println("아래에 국어, 영어, 전산 성적을 순서대로 입력해주세요 ");
 		int kor = sc.nextInt();
 		int eng = sc.nextInt();
 		int com = sc.nextInt();
-		String name = "최신형";
 		
 		int total;
 		float avg = 0;
