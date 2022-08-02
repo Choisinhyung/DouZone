@@ -2,7 +2,7 @@ package quiz;
 
 import java.util.Scanner;
 
-public class ScoreSwitch {
+public class ScoreWhile {
 
 	public static void main(String[] args) {
 		
