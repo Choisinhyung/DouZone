@@ -12,12 +12,12 @@ public class ScoreArrayEx2 {
 			String[] strName = new String[SU];
 			Scanner sc = new Scanner(System.in);
 
-			for (int i = 0; i < arr.length; i++) {
+			for (int i = 0; i < arr.length; i++) { //배열 행의 길이만큼 반복
 				System.out.printf("%d번째 학생 이름 입력: \n", i + 1);
-				strName[i] = sc.next();
+				strName[i] = sc.next(); //이름 저장
 				
-				for (int j = 0; j < arr[0].length; j++) {
-					switch (j) {
+				for (int j = 0; j < arr[0].length; j++) { // 배열 각 행의 열에 아래코드 저장
+					switch (j) { //배열 해당되는 열 출력구문
 					case 0:	System.out.print("국어점수 입력: ");
 						break;
 					case 1:	System.out.print("영어점수 입력: ");
@@ -25,7 +25,7 @@ public class ScoreArrayEx2 {
 					case 2:	System.out.print("전산점수 입력: ");
 						break;
 					} // end switch
-					arr[i][j] = sc.nextInt();
+					arr[i][j] = sc.nextInt(); // 배열의 각 행과 열에 입력값 저장(점수)
 				} // j   end
 			}  // i  end
 
@@ -34,20 +34,20 @@ public class ScoreArrayEx2 {
 			String strmsg = " ";
 			char szGrade = ' ';
 			
-			for (int i = 0; i < arr.length; i++) {
+			for (int i = 0; i < arr.length; i++) { //행의 길이만큼 반복 0 1 2 
 				nSum = 0;
 				fAvg = 0.0f;
 				nGrade = 0;
-				System.out.printf("[ %s ] 학생 점수 ==================\n ", strName[i]);
-				for (int j = 0; j < arr[0].length; j++) {
+				System.out.printf("[ %s ] 학생 점수 ==================\n ", strName[i]); // 이름배열에 저장된 값 출력
+				for (int j = 0; j < arr[0].length; j++) { //배열의 열만큼 반복 0 1 2 
 					strmsg = " ";
-					switch (j) {
+					switch (j) { // 열의 숫자가 아래와 같다면~
 						case 0:	strmsg = "국어 ";		break;
 						case 1:	strmsg = "영어 ";		break;
 						case 2:	strmsg = "전산 ";		break;
 					}
-					nSum += arr[i][j];
-					System.out.printf("[ %s ] : %d \n", strmsg, arr[i][j]);
+					nSum += arr[i][j]; // 점수 누적 합치기
+					System.out.printf("[ %s ] : %d \n", strmsg, arr[i][j]); // 국어는 100점 ...
 				} // end for 
 				
 				fAvg = (double) nSum / arr.length;
