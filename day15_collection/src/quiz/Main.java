@@ -7,11 +7,11 @@ public class Main {
       Scanner sc = new Scanner(System.in);
       
       
-	      // 고객 추가
       while(true) {
     	  System.out.println("**고객 관리 프로그램**");
     	  System.out.print("1. 고객 추가 2. 고객삭제 3. 고객 리스트 출력 4. 수정 5. 프로그램 종료 ");
     	  int input = sc.nextInt();
+    	  // 고객 추가
 	      if(input == 1) {
 		   	  c.input();
 	      }
