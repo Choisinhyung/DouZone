@@ -1,43 +1,76 @@
-package DouZoneHomework;
+package quiz;
 
 import java.util.Scanner;
 
-public class Ex01_0803 {
-		//성적 처리 프로그램 함수로 분리하기
-
-	public static String name;
-	public static int kor;
-	public static int eng;
-	public static int com;
-	public static int total;
-	public static double average;
-	public static String grade;
-	public static String[] sum;
+public class Score {
 	
-	public static void input() {
-		// 입력함수 : 이름, 국어, 영어, 전산 입력하기
-		Scanner sc = new Scanner(System.in);
+	private  String name = " ";
+	private  int kor = 0;
+	private  int eng = 0;
+	private  int com = 0;
+	private  int total = 0;
+	private  double average = 0.0;
+	private  String grade = " ";
+	
+	Scanner sc = new Scanner(System.in);
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName() {
 		System.out.println("이름을 입력하세요");
 		name = sc.next();
+	}
+	
+	public int getKor() {
+		return kor;
+	}
+	
+	public void setKor() {
 		System.out.println("국어 점수를 입력하세요");
 		kor = sc.nextInt();
+	}
+	
+	public int getEng() {
+		return eng;
+	}
+	
+	public void setEng() {
 		System.out.println("영어 점수를 입력하세요");
 		eng = sc.nextInt();
+	}
+	
+	public int getCom() {
+		return com;
+	}
+	
+	public void setCom() {
 		System.out.println("전산 점수를 입력하세요");
 		com = sc.nextInt();
 	}
 	
-	public static void total() {
-		//총점
-		total = kor + eng + com;
+	public int getTotal() {
+		return total;
 	}
 	
-	public static void average() {
-		//평균
+	public void setTotal() {
+		total = kor + eng +  com;
+	}
+	
+	public double getAverage() {
+		return average;
+	}
+	
+	public void setAverage() {
 		average = (double)total / 3;
 	}
 	
-	public static void grade() {
+	public String getGrade() {
+		return grade;
+	}
+
+	public void grade() {
 		//학점
 		for(int i = 0; i < 1; i++) {
 			switch ((int)average / 10) {
@@ -60,19 +93,11 @@ public class Ex01_0803 {
 		} //end for
 	}
 	
-	public static void output() {
+	public void output() {
 		//결과 출력
-		input();
-		total();
-		average();
-		grade();
 		System.out.println("***" + name + "님의 성적표***");
 		System.out.println("국어 : " + kor + " 영어 : " + eng + " 전산 : " + com);
 		System.out.printf("총점 : %d 평균 : %.1f  평점(학점) : %s \n", total, average, grade);
-	}
-		
-	public static void main(String[] args) {
-		output();
 	}
 
 }

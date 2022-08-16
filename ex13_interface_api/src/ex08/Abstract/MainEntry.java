@@ -36,9 +36,9 @@ public class MainEntry {
 		r.show("Rectangle");
 		
 		Triangle t = new Triangle();
-		t.show("Triangle");
+		.args.clone()
 		
-
+		t.show("Triangle");
 	}
 
 }
