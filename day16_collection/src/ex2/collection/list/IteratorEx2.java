@@ -14,21 +14,24 @@ public class IteratorEx2 {
 		Iterator it = original.iterator();
 		
 		while(it.hasNext()){
+			//데이터 복사
+			//다음요소가 있으면 copy1에다가 다음요소를 하나씩 추가한다.
 			copy1.add(it.next());
 		}
-		System.out.println("= Original���� copy1�� ����(copy) =");		
+		System.out.println("= Original에서 copy1로 복사(copy) =");		
 		System.out.println("original:"+original);
 		System.out.println("copy1:"+copy1);
 		System.out.println();
 
 		it = original.iterator();
 		
+		//데이터 삭제
 		while(it.hasNext()){
 			copy2.add(it.next());
 			it.remove();
 		}
 		
-		System.out.println("= Original���� copy2�� �̵�(move) =");		
+		System.out.println("= Original에서 copy2로 복사(copy) =");			
 		System.out.println("original:"+original);
 		System.out.println("copy2:"+copy2);		
 	} // main
