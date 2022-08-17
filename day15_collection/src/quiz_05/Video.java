@@ -11,6 +11,7 @@ public class Video { //model
 	protected Date lendDate; // 대여일자(오늘 날짜 입력)
 	
 	public Video() {
+		
 	}
 
 	public Video(String title, String category, String lend, String lendName, Date lendDate) {
@@ -20,8 +21,6 @@ public class Video { //model
 		this.lendName = lendName;
 		this.lendDate = lendDate;
 	}
-	
-	
 	
 	public String display() {
 		System.out.println("비디오 제목 : " + title);
