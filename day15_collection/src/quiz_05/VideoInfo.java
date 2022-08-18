@@ -49,6 +49,5 @@ public class VideoInfo extends Video { // controller
         while(it.hasNext()){
             System.out.println(((Video) it.next()).display());
         }
-		
 	}
 }
