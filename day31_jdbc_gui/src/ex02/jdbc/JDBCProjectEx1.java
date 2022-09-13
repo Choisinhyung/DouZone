@@ -1,4 +1,4 @@
-package controller;
+package ex02.jdbc;
 import java.sql.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
