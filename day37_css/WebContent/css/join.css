@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+#h1 {
+	text-align: center;
+}
+
+#table, th{
+   width: 200px;
+   height: 30px;
+   text-align: center;
+   border-color :  black ;
+   border-collapse: collapse;
+   background-color : #ffdbd7;
+}
+
+#num1, #num2 {
+	width: 65px;
+}
+
+#t {
+	width: 225px;
+}
+
+#button {
+   background-color : #ffdbd7;
+   text-align: center;
+}

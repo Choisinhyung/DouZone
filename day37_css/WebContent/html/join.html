@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보 입력</title>
+<link rel = "stylesheet" href = "../css/join.css" type = "text/css">
+</head>
+<body>
+	<form action="" method = "get">
+	<h1 id = "h1">회원 정보 입력</h1>
+	<hr>
+	<table border = "1" align = "center">
+		<tr>
+			<th><font color = "red">＊</font>ID</th>
+			<td><input type = "text" placeholder = "ID입력" id = "t"></td>
+		</tr>
+		<tr>
+			<th><font color = "red">＊</font>Password</th>
+			<td><input type = "text" placeholder = "Password 입력" id = "t"></td>
+		</tr>
+		<tr>
+			<th><font color = "red">＊</font>Password 확인</th>
+			<td><input type = "text" placeholder = "Password 재입력" id = "t"></td>			
+		</tr>
+		<tr>
+			<th><font color = "red">＊</font>이름</th>
+			<td><input type = "text" placeholder = "이름" id = "t"></td>			
+		</tr>
+		<tr>
+			<th><font color = "red">＊</font>전화번호</th>
+			<td><select>
+				<option>011</option>
+				<option>010</option>
+				<option>017</option>
+			</select> - <input type = "text" id = "num1"> - <input type = "text" id = "num2"> </td>
+		</tr>
+		<tr>
+			<th>직업</th>
+			<td><select>
+				<option>직업 선택</option>
+				<option>학생</option>
+				<option>주부</option>
+				<option>무직</option>
+				<option>회사원</option>
+			</select></td>
+		</tr>
+		<tr>
+			<th>성별</th>
+			<td><input type = "radio" checked> 남
+			    <input type = "radio" > 여</td>
+		</tr>
+		<tr>
+			<th>취미</th>
+			<td><input type = "radio"> 독서
+			    <input type = "radio"> 수영
+		    	<input type = "radio"> 게임
+		    	<input type = "radio"> 영화감상
+		    	<input type = "radio"> 음악듣기 </td>
+		</tr>
+		<tr>
+			<th>자기소개</th>
+			<td><textarea rows = "5" cols = "55">자기소개 해주세용</textarea></td>
+		</tr>
+		<tr>
+			<td colspan = "2" id = "button">
+				<button type = "submit"> 등록하기 </button>
+				<button type = "submit"> 취소하기 </button>
+			</td>
+		</tr>		
+	</table>
+	</form>
+</body>
+</html>

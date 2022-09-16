@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+img {
+	border-color : black;
+	border : 15px dotted;
+}
+
+span.accent { /* span .accent or div .accent */
+	font-size : 20px;
+	color : red;
+	font-weight : bold; /* 두께 */
+}
+
+p em { /* p em or div em */
+	color : blue;
+	background-color : purple;
+}
+
+body, div {
+	background-color:aqua;
+	text-align : center;
+}
+
+#multi {
+	color : orange;
+	font-size : 50px;
+}
