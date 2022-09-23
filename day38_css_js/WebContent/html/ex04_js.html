@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<script type="text/javascript">
+   function countIncrease() {
+      /* alert("innerHTML: " + document.body.innerHTML + '\n\n\n' +
+            "innerText: " + document.body.innerText);
+       */
+      // var vs let vs const
+      /* var num = document.getElementById('countSpan'); */
+      let num = document.querySelector('#countSpan'); // document.querySelector('.countSpan') -> class일때
+      /* alert(parseInt(num.innerHTML) + 1); */
+      /* num.innerHTML = parseInt(num.innerHTML) + 1; */
+      
+      
+      
+      let list = '';
+      list += "<ul>";
+      list += "<li>Hello</li>";
+      list += "<li>Hi</li>";
+      list += "<li>Good-bye</li>";
+      list += "<li>안녕</li>";
+      list += "</ul>"
+/*       document.getElementById('div').innerHTML = list;*/
+      num.innerHTML = parseInt(num.innerHTML) + 1;
+   }
+   
+   
+</script>
+
+</head>
+<body>
+   <span id = "countSpan">0</span>번 클릭 &nbsp;&nbsp;
+   <input type = "button" value = "Click" onclick = "countIncrease()">
+   
+   <hr>
+   Good <br/>
+   <h5>미리 축하합니다 ~~~ 잘해봅시다.</h5>
+   
+   <div id = "div"></div>
+</body>
+</html>

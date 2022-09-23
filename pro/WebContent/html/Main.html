@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8">
+<title>개발자 유형 테스트</title>
+<style>
+@font-face {
+	font-family: 'KOTRA_BOLD-Bold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body {
+	height: 100%;
+	font-family: 'KOTRA_BOLD-Bold';
+}
+
+.title-wrap {
+	font-size: 35px;
+	line-height: 190px;
+}
+
+#main {
+	width: 100%;
+	height: 100%;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+
+#test {
+	background-color: #222237;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+}
+
+.inputBtn {
+	position: relative;
+	border: 1px solid #ffffff;
+	right: 30px;
+	top: 40px;
+	display: inline-block;
+	padding: 15px 30px;
+	border-radius: 15px;
+	font-family: "paybooc-Light", sans-serif;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+	font-weight: 600;
+	transition: 0.25s;
+	width: 150px;
+	height: 55px;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: transparent;
+	color: white;
+}
+
+.inputBtn:hover {
+	background: #75698a;
+	color: white;
+}
+
+.title1 {
+	background: linear-gradient(to right, #ff30d0, #4964f1);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-color: white;
+}
+
+.title2 {
+	background: linear-gradient(to right, #00ffde, #006dba);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-top: -150px;
+}
+
+.answer {
+	color: #959595;
+}
+
+.modal {
+	display: none;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, .3);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.modal>.content {
+	width: 500px;
+	height: 260px;
+	margin: 300px auto;
+	padding: 20px;
+	position: relative;
+	background-color: #fff;
+}
+
+.modal .close {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	font-size: 10px;
+	border: 0;
+	background-color: #fff;
+}
+
+.modal .close:hover, .modal .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#input {
+	font-size: 20px;
+}
+
+#name, #gender, #age {
+	font-size: 15px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid
+}
+
+#btnCheck {
+	font-size: 15px;
+	/*   	border-radius: 15px; */
+	border: 1px solid black;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	background-color: transparent;
+	color: black;
+}
+
+#btnCheck:hover {
+	background: #75698a;
+	color: white;
+}
+
+#btnClose {
+	font-size: 50px;
+	right: 20px;
+}
+
+.who {
+	width: 97%;
+	height: 100%;
+	color : white;
+}
+
+#btn {
+	font-size: 15px;
+	border: 3px;
+	background-color: transparent;
+	cursor: pointer;
+	color : white;
+	border-bottom: 1px solid
+	
+}
+
+</style>
+<body>
+	<div id="test">
+		<div id="main">
+			<div class="title-wrap">
+				<h1 class="title1">
+					나와 어울리는
+				</h1>
+				<h1 class="title2">개발자 유형 찾기</h1>
+			</div>
+			<div class="mainImage">
+				<img src="../images/main.png" width="300" height="300" alt="">
+			</div>
+			<div class="controller-wrap">
+				<button type='button' class='inputBtn' id='inputBtn'>정보 입력</button>
+				<div class="modal" id="modal">
+					<div class="content">
+						<input type='button' value='x' class="close" id='btnClose' /> <br>
+						<label id="input">정보를 입력해주세요. </label>
+						<br>
+						<br>이름 : <input type='text'
+							id='name' class='name' name='name'/><br>
+						<br>성별 : <input type='text'
+							id='gender'class='gender' name='gender' placeholder="여자 or 남자 입력" /><br>
+						<br>나이 : <input type='text'
+							id='age' class='age' name='age'/><br>
+						<br> <input type='button' value="시작하기" id='btnCheck' /><br>
+					</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class = "who">
+				<font id = "who">누가 만들었을까요? <br> 개발자 정보 </font>
+				<input type = 'button' value = "확인!" id='btn'
+				onclick="location.href='Info.html'"/>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var inputBtn = document.getElementById('inputBtn'); //누르면모달창뜨게
+	var btnCheck = document.getElementById('btnCheck'); //정보입력완료
+	var btnClose = document.getElementById('btnClose'); //닫기
+	var moveBtn = function(){
+		let userName=document.querySelector(".name").value;
+		let userGender = document.querySelector(".gender").value;
+		let userAge = document.querySelector(".age").value;
+		let tempData = new Object();
+		tempData['name']=userName;
+		tempData['gender']=userGender;
+		tempData['age']=userAge;
+		localStorage.setItem("userInfo",JSON.stringify(tempData));
+		location.href = 'question_1.html';
+	}
+	// modal 창을 감춤
+	var closeBtn = function() {
+		var modal = document.getElementById('modal');
+		modal.style.display = 'none';
+	};
+
+	// modal 창을 보여줌
+	var OpenBtn = function() {
+		var modal = document.getElementById('modal');
+		modal.style.display = 'block';
+	};
+	btnCheck.onclick = moveBtn;
+	inputBtn.onclick = OpenBtn;
+	btnClose.onclick = closeBtn;
+</script>
+</html>

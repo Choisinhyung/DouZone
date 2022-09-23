@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .username{
+        width: 40px;
+  height: 20px;
+  font-size: 8px;
+  border: 0;
+  border-radius: 12px;
+  outline: none;
+  padding-left: 10px;
+  background-color: transparent;
+  color:white;
+}
+
+.username:hover{
+    background:#75698a;
+    color:white;
+}
+    .commit-Btn{
+        width:40px;
+        height:20px;
+        font-size:8px;
+        border-radius:20%;
+        background-color:transparent;
+        color:white;
+    }
+    .commit-Btn:hover {
+        background: #75698a;
+        color: white;
+     }
+li{
+   list-style: none; 
+}
+body{
+    background-color: #222237;
+    color:white;
+}    
+.rootDiv{
+    width:250px;
+    height:300px;
+    border:1px solid white;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/dogs" id="instaForm">
+      <input type="text" name="username" placeholder="username" class="username" />
+      <input type="text" name="comment" placeholder="comment" />
+      <button class="commit-Btn">전송</button>
+    </form>
+    <div class="Comments">Comments</div>
+
+    <div id="rootDiv" class='rootDiv'>
+    </div>
+    <script>
+        const instaForm = document.querySelector("#instaForm");
+instaForm.addEventListener("submit", function (e) {
+    /* submit 되었을 때, 해야할 일
+    rootDiv부터 html을 읽어온 뒤
+    sub div의 마지막 란에 username:comment추가
+
+
+    */
+    e.preventDefault();
+        const userName = instaForm.elements.username;
+        const comment = instaForm.elements.comment;
+    addComment(userName.value,comment.value);
+
+    userName.value="";
+    comment.value="";
+    
+  
+});
+const addComment = (userName,comment)=>{
+    const rootDiv = document.getElementById('rootDiv');
+    const newComment = document.createElement("li");
+    const bTag = document.createElement("b");
+    if(userName==""||comment==""){
+        return ;
+    }
+    bTag.append(" "+userName);
+    newComment.append(bTag);
+    newComment.append(` : ${comment}`);
+    rootDiv.insertBefore(newComment,rootDiv.firstChild);
+}
+    </script>
+</body>
+</html>
