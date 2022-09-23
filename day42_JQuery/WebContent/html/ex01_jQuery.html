@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex01_jquery.html</title>
+
+<!-- file방식 링크 -->
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+<header>
+   <h2>jQuery Sample</h2>
+</header>
+
+<input id="inputdemo" value="">
+<input id="button1" type="button" value="변환1">
+<input id="button2" type="button" value="변환2">
+
+<div class="welcome"></div>
+<div class="welcome"></div><hr>
+<div id="demo">
+   <div class="inner">
+      Create jQeuery Test
+   </div>
+</div> <hr>
+
+<div id = "name">이 부분에 클릭 이벤트가 발생하면 자신 이름 출력하세요.</div>
+
+<script type="text/javascript">
+   
+   $(function() {
+      $('#button1').on('click', function() {
+         $('#inputdemo').val('최신형');   
+      });
+      $('#button2').on('click', function() {
+         $('#inputdemo').val('');
+      })
+   });
+   
+   
+   $(function () {
+      //$('h2').css('color', 'aqua');
+      // #demo .inner 글자에 언더라인
+      //$('#demo .inner').css('text-decoration', 'underline');
+      //아래쪽에 5px 두께 실선 red
+      //$('#demo .inner').css('border-bottom', '5px solid red');
+      //기울기
+      //$('#demo .inner').css('transform', 'rotate(45deg)');
+      //$('#demo .inner').css('opacity', '0.5');
+      $('#demo .inner').css({ 
+         'text-decoration': 'underline',
+         'border-bottom': '5px solid red',
+         'transform': 'rotate(45deg)',
+         'opacity': .3
+      });
+      
+      // $('선택자').on('이벤트종류', 할 일)
+      $('#demo').on('mouseover', function() {
+         $('.inner').css('background', 'white').html('글자 변경');
+      });
+      
+      //여러 선택자에 이벤트 추가
+      $('#demo, h2, div').mouseover(function () {
+         $(this).css('background', 'yellow').html('douzone th3');
+      })
+      
+      
+      
+   });
+
+
+
+   //document.getElementsByTagName("h2")[0].style.color='red';
+   //$('h2').css({'color':'pink'});
+   
+   //1.체이닝(chain) 방식
+   //on(1,2); on('event', function(){})
+  /*  $('.welcome').html('hello world! DouZone th3!!!')
+               .css('background-color', 'orange')
+               .on('click', function(e){
+                  console.log(e);
+                  let clicked = e.target;
+                  //console.log(clicked);
+                  $(this).css('background-color', 'red');
+               });
+   $('#name').on('click',(function() {
+      $(this).css({'fontSize':'15px'})
+   })
+    */
+   
+  /*  $('#name').on('click', function() {
+            $(this).css(
+                  {'background-color': 'black',
+                        'color':'white'
+                     }).html('최신형');
+         }); */
+</script>
+
+</body>
+</html>
